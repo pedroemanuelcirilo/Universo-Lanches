@@ -1,0 +1,73 @@
+MainUniversoLanches
+association UniversoLanches
+---
+---
+---
+
+UniversoLanches
+composes Cliente 
+composes Produto 
+---
+- clientes: Map<String, Cliente>
+- estoque: Map<String, Produto>
+---
++ UniversoLanches()
++ adicionaCliente(nome: String, email: String, residencia: String): boolean
++ adicionaPedido(email: String, quantidade: int, nome: String, local: String): String
++ adicionaProduto(nome: String, preco: double, quantidade: int, valorCompra: double): String
++ compraProduto(quantidade: int, nomeProduto: String): String
++ mudaPreco(nome: String, preco: double): String
++ tiraPedido(email: String, quantidade: int, nome: String, local: String): String
++ mostraCarrinho(email: String): String
++ mostraEstoque(): String
+---
+
+Cliente
+composes Pedido
+---
+- nome: String
+- email: String
+- residencia: String
+- carrinho: ArrayList<Pedido>
+---
++ Cliente(nome: String, email: String, residencia: String)
++ adicionaPedido(pedido: Pedido): void
++ tiraPedido(pedido: Pedido): void
++ getResidencia(): String
++ getCarrinho(): String
++ equals(o: Object): boolean
++ hashCode(): int
+---
+
+Pedido
+association Produto
+---
+- quantidade: int
+- produto: Produto
+- local_entrega: String
+---
++ Pedido(quantidade: int, produto: Produto, local_entrega: String)
++ toString(): String
++ equals(o: Object): boolean
++ hashCode(): int
+---
+
+Produto
+---
+- nome: String
+- preco: double
+- quantidade: int
+- preco_compra: double
+---
++ Produto(nome: String, preco: double, quantidade: int, preco_compra: double)
++ getNome(): String
++ getPreco(): double
++ setPreco(preco: double): void
++ adicionaQuantidade(quantidade: int): void
++ getQuantidade(): int
++ getPreco_compra(): double
++ setPreco_compra(preco_compra: double): void
++ equals(o: Object): boolean
++ hashCode(): int
++ toString(): String
+---
