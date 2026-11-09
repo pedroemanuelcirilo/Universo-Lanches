@@ -13,6 +13,10 @@ public class Pedido {
         this.quantidade = quantidade;
     }
 
+    public Produto getProduto() {
+        return produto;
+    }
+
     @Override
     public String toString(){
         return String.format("%d(s) de %s total de: R$%.2f\n||%s||",quantidade, produto.getNome(), produto.getPreco() * quantidade, local_entrega);

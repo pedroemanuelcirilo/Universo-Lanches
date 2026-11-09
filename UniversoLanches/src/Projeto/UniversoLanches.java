@@ -64,10 +64,9 @@ public class UniversoLanches {
         return "PRODUTO NÃO ESTA NO ESTOQUE";
     }
 
-    public String tiraPedido(String email, int quantidade, String nome, String local){
+    public String tiraPedido(String email, String nome){
         if (clientes.containsKey(email) && estoque.containsKey(nome)){
-            Pedido pedido = new Pedido(quantidade, estoque.get(nome), local);
-            clientes.get(email).tiraPedido(pedido);
+            clientes.get(email).tiraPedido(nome);
             return "PEDIDO REMOVIDO";
         }
         return "PEDIDO NÃO LISTADO";

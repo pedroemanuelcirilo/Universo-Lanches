@@ -103,15 +103,10 @@ public class MainUniversoLanches {
     private static void cancelaPedido(Scanner scanner, UniversoLanches uni){
         System.out.print("Email> ");
         String email = scanner.nextLine();
-        System.out.print("Qunatidade> ");
-        int quantidade = scanner.nextInt();
-        scanner.nextLine();
         System.out.print("Nome do produto> ");
         String nome = scanner.nextLine();
-        System.out.print("Local de entrega> ");
-        String local = scanner.nextLine();
 
-        System.out.println(uni.tiraPedido(email, quantidade, nome, local));
+        System.out.println(uni.tiraPedido(email, nome));
     }
 
     private static void adicionaEstoque(Scanner scanner, UniversoLanches uni){

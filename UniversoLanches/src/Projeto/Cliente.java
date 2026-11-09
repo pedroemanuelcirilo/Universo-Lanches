@@ -20,8 +20,12 @@ public class Cliente {
         carrinho.add(pedido);
     }
 
-    public void tiraPedido(Pedido pedido){
-        carrinho.remove(pedido);
+    public void tiraPedido(String nome){
+        for (Pedido p : carrinho){
+            if (p.getProduto().getNome().equals(nome))
+                carrinho.remove(p);
+            return;
+        }
     }
 
     public String getResidencia() {

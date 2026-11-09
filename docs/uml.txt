@@ -17,7 +17,7 @@ composes Produto
 + adicionaProduto(nome: String, preco: double, quantidade: int, valorCompra: double): String
 + compraProduto(quantidade: int, nomeProduto: String): String
 + mudaPreco(nome: String, preco: double): String
-+ tiraPedido(email: String, quantidade: int, nome: String, local: String): String
++ tiraPedido(email: String, nome: String): String
 + mostraCarrinho(email: String): String
 + mostraEstoque(): String
 ---
@@ -32,7 +32,7 @@ composes Pedido
 ---
 + Cliente(nome: String, email: String, residencia: String)
 + adicionaPedido(pedido: Pedido): void
-+ tiraPedido(pedido: Pedido): void
++ tiraPedido(nome: String): void
 + getResidencia(): String
 + getCarrinho(): String
 + equals(o: Object): boolean
@@ -47,6 +47,7 @@ association Produto
 - local_entrega: String
 ---
 + Pedido(quantidade: int, produto: Produto, local_entrega: String)
++ getNome(): String
 + toString(): String
 + equals(o: Object): boolean
 + hashCode(): int
